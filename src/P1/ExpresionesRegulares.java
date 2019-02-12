@@ -7,10 +7,10 @@ public class ExpresionesRegulares {
 	
 	public static void main(String[] args) {
 		ExDNI();
-		//ExNumeroReal();
-		//ExDominio();
-		//ExEmail();
-		//ExIdentificador();
+		ExNumeroReal();
+		ExDominio();
+		ExEmail();
+		ExIdentificador();
 		
 	}
 	
@@ -19,22 +19,20 @@ public class ExpresionesRegulares {
 		Scanner teclado = new Scanner(System.in);
 		String dni = teclado.nextLine();
 		
-		String dniExpRegular8 = "\\d{8}[A-HJ-NP-TV-Z]";
-		String dniExpRegular7 = "\\d{7}[A-HJ-NP-TV-Z]";
+		String dniExpRegular = "\\d{1,8}[A-HJ-NP-TV-Z]";
 		String nieExpRegular7 = "[X,Y,Z]\\d{7}[A-HJ-NP-TV-Z]";
 		
 		
-		if(Pattern.matches(dniExpRegular8, dni) == false){
-			if(Pattern.matches(dniExpRegular7, dni) == false)
+		if(Pattern.matches(dniExpRegular, dni) == false){
 				if(Pattern.matches(nieExpRegular7, dni) == false)
 					System.out.println("El DNI o NIE no es correcto");
 		}
-		if(Pattern.matches(dniExpRegular8, dni))
-			System.out.println("El DNI es correcto");
-		if(Pattern.matches(dniExpRegular7, dni))
+		if(Pattern.matches(dniExpRegular, dni))
 			System.out.println("El DNI es correcto");
 		if(Pattern.matches(nieExpRegular7, dni))
 			System.out.println("El NIE es correcto");
+		
+		System.out.println("-----------------------------------");
 		
 	}
 	
@@ -50,6 +48,7 @@ public class ExpresionesRegulares {
 		else
 			System.out.println("El numero real no es correcto");
 		
+		System.out.println("-----------------------------------");
 	}
 	
 	public static void ExDominio() {
@@ -64,6 +63,7 @@ public class ExpresionesRegulares {
 		else 
 			System.out.println("El dominio es incorrecto");
 			
+		System.out.println("-----------------------------------");
 	}
 	
 	public static void ExEmail() {
@@ -78,6 +78,7 @@ public class ExpresionesRegulares {
 		else
 			System.out.println("El email es incorrecto");
 		
+		System.out.println("-----------------------------------");
 	}
 	
 	public static void ExIdentificador() {
@@ -91,5 +92,7 @@ public class ExpresionesRegulares {
 			System.out.println("El identificador es correcto");
 		else
 			System.out.println("El identificador es incorrecto");
+		
+		System.out.println("-----------------------------------");
 	}
 }

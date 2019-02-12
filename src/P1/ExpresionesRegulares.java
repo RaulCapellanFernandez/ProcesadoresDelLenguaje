@@ -6,10 +6,11 @@ import java.util.regex.Pattern;
 public class ExpresionesRegulares {
 	
 	public static void main(String[] args) {
-		//ExDNI();
+		ExDNI();
 		//ExNumeroReal();
+		//ExDominio();
 		//ExEmail();
-		ExDominio();
+		//ExIdentificador();
 		
 	}
 	
@@ -20,18 +21,20 @@ public class ExpresionesRegulares {
 		
 		String dniExpRegular8 = "\\d{8}[A-HJ-NP-TV-Z]";
 		String dniExpRegular7 = "\\d{7}[A-HJ-NP-TV-Z]";
+		String nieExpRegular7 = "[X,Y,Z]\\d{7}[A-HJ-NP-TV-Z]";
 		
 		
 		if(Pattern.matches(dniExpRegular8, dni) == false){
 			if(Pattern.matches(dniExpRegular7, dni) == false)
-				System.out.println("La expresion no es correcta");
+				if(Pattern.matches(nieExpRegular7, dni) == false)
+					System.out.println("El DNI o NIE no es correcto");
 		}
-		
-		if(Pattern.matches(dniExpRegular8, dni)== true)
-			System.out.println("La expresion es correcta");
-		if(Pattern.matches(dniExpRegular7, dni) == true)
-			System.out.println("La expresion es correcta");
-		
+		if(Pattern.matches(dniExpRegular8, dni))
+			System.out.println("El DNI es correcto");
+		if(Pattern.matches(dniExpRegular7, dni))
+			System.out.println("El DNI es correcto");
+		if(Pattern.matches(nieExpRegular7, dni))
+			System.out.println("El NIE es correcto");
 		
 	}
 	
@@ -64,11 +67,11 @@ public class ExpresionesRegulares {
 	}
 	
 	public static void ExEmail() {
-		System.out.println("Introduce un emai");
+		System.out.println("Introduce un email");
 		Scanner teclado = new Scanner(System.in);
 		String email = teclado.nextLine();
 		
-		String exEmail = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+		String exEmail = "\\w*\\.?\\w*?\\@\\w*\\.?\\w*\\.\\w*";
 		
 		if(Pattern.matches(exEmail, email))
 			System.out.println("El email es correcto");
@@ -77,7 +80,16 @@ public class ExpresionesRegulares {
 		
 	}
 	
-	public void ExIdentificador() {
+	public static void ExIdentificador() {
+		System.out.println("Introduce un identificador");
+		Scanner teclado = new Scanner(System.in);
+		String identificador = teclado.nextLine();
 		
+		String exIdentificador = "[\\_a-zA-Z]([\\_a-zA-Z0-9]+)?";
+		
+		if(Pattern.matches(exIdentificador, identificador))
+			System.out.println("El identificador es correcto");
+		else
+			System.out.println("El identificador es incorrecto");
 	}
 }

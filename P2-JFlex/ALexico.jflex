@@ -32,12 +32,13 @@ Numero = {Digito} {Digito}*
 	[O] {System.out.print(12);}
 	[U] {System.out.print(15);}*/
 	
-	//3.***********LETRAS A MAYUSCULAS NUM*FILA*******************NO
+	//3.***********LETRAS A MAYUSCULAS NUM*FILA*******************
 	[a-z] {System.out.print(yytext().toUpperCase());
 			yyline = 1;}
 	[\n] {yyline++;}
 	[0-9] {System.out.print(Integer.parseInt(yytext()) * yyline);}
 	
+	//4.***********Borra Comentarios y tabulaciones*******************
 	/*[/][/] {System.out.print("");}
 	[	] {System.out.print("");}*/
 	

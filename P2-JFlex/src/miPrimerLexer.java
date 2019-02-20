@@ -541,13 +541,12 @@ class miPrimerLexer {
             // fall through
           case 5: break;
           case 2: 
-            { System.out.print(Integer.parseInt(yytext()) * yyline);
+            { System.out.print(Integer.parseInt(yytext()) * (yyline+1));
             } 
             // fall through
           case 6: break;
           case 3: 
             { System.out.print(yytext().toUpperCase());
-			yyline = 1;
             } 
             // fall through
           case 7: break;

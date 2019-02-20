@@ -33,10 +33,9 @@ Numero = {Digito} {Digito}*
 	[U] {System.out.print(15);}*/
 	
 	//3.***********LETRAS A MAYUSCULAS NUM*FILA*******************
-	[a-z] {System.out.print(yytext().toUpperCase());
-			yyline = 1;}
+	[a-z] {System.out.print(yytext().toUpperCase());}
 	[\n] {yyline++;}
-	[0-9] {System.out.print(Integer.parseInt(yytext()) * yyline);}
+	[0-9] {System.out.print(Integer.parseInt(yytext()) * (yyline+1));}
 	
 	//4.***********Borra Comentarios y tabulaciones*******************
 	/*[/][/] {System.out.print("");}

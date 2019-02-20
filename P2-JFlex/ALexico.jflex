@@ -5,6 +5,7 @@ import java.io.*;
 //Area de opciones y declaraciones
 %class miPrimerLexer
 %standalone
+%line
 
 Digito = [0-9]
 Numero = {Digito} {Digito}*
@@ -20,7 +21,7 @@ Numero = {Digito} {Digito}*
 	/*[1,3,5,7,9] {System.out.print(Integer.parseInt(yytext())-1);}
 	[0,2,4,6,8] {System.out.print(Integer.parseInt(yytext())+1);}*/
 	
-	//2.***********VOCALES A NUMEROS*******************
+	//2.***********VOCALES A NUMEROS*******************NO
 	/*[a] {System.out.print(1);}
 	[e] {System.out.print(2);}
 	[i] {System.out.print(3);}
@@ -33,13 +34,12 @@ Numero = {Digito} {Digito}*
 	[U] {System.out.print(15);}*/
 	
 	//3.***********LETRAS A MAYUSCULAS NUM*FILA*******************
-	[a-z] {System.out.print(yytext().toUpperCase());}
-	[\n] {yyline++;}
-	[0-9] {System.out.print(Integer.parseInt(yytext()) * (yyline+1));}
+	/*[a-z] {System.out.print(yytext().toUpperCase());}
+	[0-9] {System.out.print(Integer.parseInt(yytext()) * (yyline+1));}*/
 	
 	//4.***********Borra Comentarios y tabulaciones*******************
 	/*[/][/] {System.out.print("");}
-	[	] {System.out.print("");}*/
+	([	]?[" "]?)+ {System.out.print(" ");}*/
 	
 	//5.***********NUMEROS A MESES*******************
 	/*[1] {System.out.print("Enero");}

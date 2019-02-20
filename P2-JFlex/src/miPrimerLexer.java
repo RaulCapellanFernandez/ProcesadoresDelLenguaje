@@ -34,7 +34,7 @@ class miPrimerLexer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\12\0\1\3\45\0\12\1\47\0\32\2\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uff95\0";
+    "\11\0\1\2\26\0\1\2\16\0\1\1\12\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffd6\0";
 
   /** 
    * Translates characters to character classes
@@ -47,7 +47,7 @@ class miPrimerLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\1\4";
+    "\1\1\2\2\1\1\1\3";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[5];
@@ -75,7 +75,7 @@ class miPrimerLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\4\0\4\0\4\0\4";
+    "\0\0\0\3\0\6\0\11\0\3";
 
   private static int [] zzUnpackRowMap() {
     int [] result = new int[5];
@@ -101,10 +101,10 @@ class miPrimerLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\1\5\4\0";
+    "\1\2\1\3\1\4\4\0\1\5\3\0\1\4";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[8];
+    int [] result = new int[12];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -142,7 +142,7 @@ class miPrimerLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\4\11";
+    "\1\1\1\11\2\1\1\11";
 
   private static int [] zzUnpackAttribute() {
     int [] result = new int[5];
@@ -241,7 +241,7 @@ class miPrimerLexer {
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 46) {
+    while (i < 48) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -469,6 +469,58 @@ class miPrimerLexer {
     while (true) {
       zzMarkedPosL = zzMarkedPos;
 
+      boolean zzR = false;
+      int zzCh;
+      int zzCharCount;
+      for (zzCurrentPosL = zzStartRead  ;
+           zzCurrentPosL < zzMarkedPosL ;
+           zzCurrentPosL += zzCharCount ) {
+        zzCh = Character.codePointAt(zzBufferL, zzCurrentPosL, zzMarkedPosL);
+        zzCharCount = Character.charCount(zzCh);
+        switch (zzCh) {
+        case '\u000B':  // fall through
+        case '\u000C':  // fall through
+        case '\u0085':  // fall through
+        case '\u2028':  // fall through
+        case '\u2029':
+          yyline++;
+          zzR = false;
+          break;
+        case '\r':
+          yyline++;
+          zzR = true;
+          break;
+        case '\n':
+          if (zzR)
+            zzR = false;
+          else {
+            yyline++;
+          }
+          break;
+        default:
+          zzR = false;
+        }
+      }
+
+      if (zzR) {
+        // peek one character ahead if it is \n (if we have counted one line too much)
+        boolean zzPeek;
+        if (zzMarkedPosL < zzEndReadL)
+          zzPeek = zzBufferL[zzMarkedPosL] == '\n';
+        else if (zzAtEOF)
+          zzPeek = false;
+        else {
+          boolean eof = zzRefill();
+          zzEndReadL = zzEndRead;
+          zzMarkedPosL = zzMarkedPos;
+          zzBufferL = zzBuffer;
+          if (eof) 
+            zzPeek = false;
+          else 
+            zzPeek = zzBufferL[zzMarkedPosL] == '\n';
+        }
+        if (zzPeek) yyline--;
+      }
       zzAction = -1;
 
       zzCurrentPosL = zzCurrentPos = zzStartRead = zzMarkedPosL;
@@ -536,25 +588,20 @@ class miPrimerLexer {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
+            { System.out.print(" ");
+            } 
+            // fall through
+          case 4: break;
+          case 2: 
             { System.out.print(yytext());
             } 
             // fall through
           case 5: break;
-          case 2: 
-            { System.out.print(Integer.parseInt(yytext()) * (yyline+1));
+          case 3: 
+            { System.out.print("");
             } 
             // fall through
           case 6: break;
-          case 3: 
-            { System.out.print(yytext().toUpperCase());
-            } 
-            // fall through
-          case 7: break;
-          case 4: 
-            { yyline++;
-            } 
-            // fall through
-          case 8: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

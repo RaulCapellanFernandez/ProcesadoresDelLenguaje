@@ -34,7 +34,8 @@ class miPrimerLexer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\2\26\0\1\2\16\0\1\1\12\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffd6\0";
+    "\54\0\1\2\3\0\1\1\1\3\1\1\1\3\1\1\1\3\1\1"+
+    "\1\3\1\1\1\3\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffd6\0";
 
   /** 
    * Translates characters to character classes
@@ -47,7 +48,7 @@ class miPrimerLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\1\2\2\1\1\1\3";
+    "\1\0\1\1\1\2\2\3";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[5];
@@ -75,7 +76,7 @@ class miPrimerLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\3\0\6\0\11\0\3";
+    "\0\0\0\4\0\10\0\4\0\10";
 
   private static int [] zzUnpackRowMap() {
     int [] result = new int[5];
@@ -101,7 +102,7 @@ class miPrimerLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\1\3\1\4\4\0\1\5\3\0\1\4";
+    "\1\2\1\3\1\4\1\5\5\0\1\3\1\4\1\5";
 
   private static int [] zzUnpackTrans() {
     int [] result = new int[12];
@@ -142,7 +143,7 @@ class miPrimerLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\1\1\11\2\1\1\11";
+    "\1\0\1\11\1\1\1\11\1\1";
 
   private static int [] zzUnpackAttribute() {
     int [] result = new int[5];
@@ -241,7 +242,7 @@ class miPrimerLexer {
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 48) {
+    while (i < 60) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -588,17 +589,17 @@ class miPrimerLexer {
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { System.out.print(" ");
+            { System.out.print(yytext());
             } 
             // fall through
           case 4: break;
           case 2: 
-            { System.out.print(yytext());
+            { System.out.print(Integer.parseInt(yytext())+1);
             } 
             // fall through
           case 5: break;
           case 3: 
-            { System.out.print("");
+            { System.out.print(Integer.parseInt(yytext())-1);
             } 
             // fall through
           case 6: break;

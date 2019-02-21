@@ -18,8 +18,8 @@ Numero = {Digito} {Digito}*
 	//[aeiou] {System.out.print(yytext().toUpperCase());}
 	
 	//1.***********PAR->IMPAR IMPAR->PAR*******************
-	/*[1,3,5,7,9] {System.out.print(Integer.parseInt(yytext())-1);}
-	[0,2,4,6,8] {System.out.print(Integer.parseInt(yytext())+1);}*/
+	([0-9]+)?[1,3,5,7,9] {System.out.print(Integer.parseInt(yytext())-1);}
+	([0-9]+)?[0,2,4,6,8] {System.out.print(Integer.parseInt(yytext())+1);}
 	
 	//2.***********VOCALES A NUMEROS*******************NO
 	/*[a] {System.out.print(1);}

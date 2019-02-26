@@ -1,3 +1,8 @@
+/*  Autor:  Raul Capellan Fernandez
+
+Practica: Practica 1 Expresiones Regulares
+
+*/
 package P1;
 
 import java.util.Scanner;

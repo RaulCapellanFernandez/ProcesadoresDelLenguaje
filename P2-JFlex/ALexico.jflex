@@ -1,3 +1,8 @@
+/*  Autor:  Raul Capellan Fernandez
+
+Practica: Practica 2 JFlex
+
+*/
 //Area de codigo, importaciones y paquetes
  
 import java.io.*;
@@ -18,10 +23,10 @@ Numero = {Digito} {Digito}*
 	//[aeiou] {System.out.print(yytext().toUpperCase());}
 	
 	//1.***********PAR->IMPAR IMPAR->PAR*******************
-	([0-9]+)?[1,3,5,7,9] {System.out.print(Integer.parseInt(yytext())-1);}
-	([0-9]+)?[0,2,4,6,8] {System.out.print(Integer.parseInt(yytext())+1);}
+	/*([0-9]+)?[1,3,5,7,9] {System.out.print("NUM_IMPAR");}
+	([0-9]+)?[0,2,4,6,8] {System.out.print("NUM_PAR");}*/
 	
-	//2.***********VOCALES A NUMEROS*******************NO
+	//2.***********VOCALES A NUMEROS*******************
 	/*[a] {System.out.print(1);}
 	[e] {System.out.print(2);}
 	[i] {System.out.print(3);}
@@ -42,7 +47,7 @@ Numero = {Digito} {Digito}*
 	([	]?[" "]?)+ {System.out.print(" ");}*/
 	
 	//5.***********NUMEROS A MESES*******************
-	/*[1] {System.out.print("Enero");}
+	[1] {System.out.print("Enero");}
 	[2] {System.out.print("Febrero");}
 	[3] {System.out.print("Marzo");}
 	[4] {System.out.print("Abril");}
@@ -53,4 +58,4 @@ Numero = {Digito} {Digito}*
 	[9]	{System.out.print("Septiembre");}
 	[1][0] {System.out.print("Octubre");}
 	[1][1] {System.out.print("Noviembre");}
-	[1][2] {System.out.print("Diciembre");}*/
+	[1][2] {System.out.print("Diciembre");}

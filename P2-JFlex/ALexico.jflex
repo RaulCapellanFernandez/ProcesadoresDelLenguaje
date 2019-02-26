@@ -47,15 +47,21 @@ Numero = {Digito} {Digito}*
 	([	]?[" "]?)+ {System.out.print(" ");}*/
 	
 	//5.***********NUMEROS A MESES*******************
-	[1] {System.out.print("Enero");}
-	[2] {System.out.print("Febrero");}
-	[3] {System.out.print("Marzo");}
-	[4] {System.out.print("Abril");}
-	[5] {System.out.print("Mayo");}
-	[6] {System.out.print("Junio");}
-	[7] {System.out.print("Julio");}
-	[8] {System.out.print("Agosto");}
-	[9]	{System.out.print("Septiembre");}
-	[1][0] {System.out.print("Octubre");}
-	[1][1] {System.out.print("Noviembre");}
-	[1][2] {System.out.print("Diciembre");}
+	[0-9]+ {
+		int month = Integer.parseInt(yytext());
+        switch (month) {
+            case 1:  System.out.println("Enero"); break;
+            case 2:  System.out.println("Febrero"); break;
+            case 3:  System.out.println("Marzo"); break;
+            case 4:  System.out.println("Abril"); break;
+            case 5:  System.out.println("Mayo"); break;
+            case 6:  System.out.println("Junio"); break;
+            case 7:  System.out.println("Julio"); break;
+            case 8:  System.out.println("Agosto"); break;
+            case 9:  System.out.println("Septiembre"); break;
+            case 10: System.out.println("Octubre"); break;
+            case 11: System.out.println("Noviembre"); break;
+            case 12: System.out.println("Diciembre"); break;
+        }
+	}
+	

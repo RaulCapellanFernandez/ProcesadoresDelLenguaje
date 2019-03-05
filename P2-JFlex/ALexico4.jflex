@@ -43,7 +43,7 @@ Numero = {Digito} {Digito}*
 	[0-9] {System.out.print(Integer.parseInt(yytext()) * (yyline+1));}*/
 	
 	//4.***********Borra Comentarios y tabulaciones*******************
-	[/][/] {System.out.print("");}
+	[/][/][a-zA-Z0-9]+ {System.out.print("");}
 	([	]?[" "]?)+ {System.out.print(" ");}
 	
 	//5.***********NUMEROS A MESES*******************

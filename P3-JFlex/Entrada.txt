@@ -1,9 +1,4 @@
-BeginJava
-System.out.println("HOLA");
-EndJava
-
 BeginPHP
-
+$c="Esta es otra cadena";
+echo $c;
 EndPHP
-
-BeginJava

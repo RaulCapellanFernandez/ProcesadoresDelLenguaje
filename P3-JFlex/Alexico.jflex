@@ -15,6 +15,8 @@ import java.io.*;
 
 %state JAVA
 %state PHP
+%state CADENA
+%state CADENAS
 
 
 BJava = [B][e][g][i][n][J][a][v][a]
@@ -46,13 +48,38 @@ Println = [p][r][i][n][t][l][n]
 <JAVA>  {Print} {System.out.println("JAVA_ID(print)");}
 <JAVA>  {Println} {System.out.println("JAVA_ID(println)");}
 <JAVA>  [(] {System.out.println("JAVA_ABREPAR");}
+
+	//***********PARA CADENAS EN JAVA*******************
+<JAVA>	[\"] {yybegin(CADENA);
+			System.out.println("JAVA_CAD_INI");}
+<CADENA> [a-zA-Z0-9\-\_] {System.out.print("");}	
+<CADENA> [\"] {yybegin(JAVA);
+				System.out.println("JAVA_CAD_FIN");}
+<JAVA>  [0-9]+ {System.out.println("JAVA_NUM");}
+<JAVA>  [<]?[>]?[=]?[!]?[=] {System.out.println("JAVA_COMPARADOR");}
+<JAVA>  [=] {System.out.println("JAVA_ASIGN");}
+						
 <JAVA>  [)] {System.out.println("JAVA_CIERRAPAR");}
+<JAVA>	[(a-zA-Z)+] {System.out.println("JAVA_ID("+yytext()+")");}
 <JAVA>  [;] {System.out.println("JAVA_FIN_INS");}
 
 <JAVA>	{EJava} {yybegin(YYINITIAL);
 				System.out.print("JAVA_FIN");}	
 				
 	//***********CODIGO PHP*******************
+<PHP>	[\$][a-zA-Z]+([a-zA-Z0-9]+)? {System.out.println("JAVA_ID("+yytext()+")");}
+
+<PHP>	[e][c][h][o] {System.out.println("PHP_ID(echo)");}
+
+<PHP>	[\"] {yybegin(CADENAS);
+			System.out.println("PHP_CAD_INI");}
+<CADENAS> [a-zA-Z0-9\-\_] {System.out.print("");}	
+<CADENAS> [\"] {yybegin(PHP);
+				System.out.println("PHP_CAD_FIN");}
+<PHP>  [<]?[>]?[=]?[!]?[=] {System.out.println("PHP_COMPARADOR");}
+<PHP>  [=] {System.out.println("PHP_ASIGN");}
+<PHP>  [;] {System.out.println("PHP_FIN_INS");}
+	
 <PHP>	{EPHP} {yybegin(YYINITIAL);
 				System.out.print("PHP_FIN");}	
 

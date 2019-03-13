@@ -1,3 +1,9 @@
-BeguinJava
-pene
+BeginJava
+System.out.println("HOLA");
 EndJava
+
+BeginPHP
+
+EndPHP
+
+BeginJava

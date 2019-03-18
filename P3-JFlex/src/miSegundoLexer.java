@@ -43,13 +43,13 @@ class miSegundoLexer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\41\0\1\37\1\31\1\0\1\44\3\0\1\30\1\40\1\0\1\41"+
-    "\1\0\1\32\1\27\1\0\12\33\1\0\1\43\1\34\1\36\1\35"+
-    "\2\0\1\42\1\1\2\42\1\11\2\42\1\14\1\42\1\6\5\42"+
-    "\1\13\2\42\1\15\7\42\4\0\1\32\1\0\1\7\1\42\1\45"+
-    "\1\12\1\2\1\42\1\3\1\46\1\4\2\42\1\26\1\21\1\5"+
-    "\1\22\1\24\1\42\1\25\1\17\1\20\1\23\1\10\2\42\1\16"+
-    "\1\42\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uff95\0";
+    "\41\0\1\43\1\35\1\0\1\52\3\0\1\30\1\44\1\0\1\33"+
+    "\1\0\1\34\1\27\1\0\12\37\1\0\1\46\1\40\1\42\1\41"+
+    "\2\0\1\45\1\1\2\45\1\11\2\45\1\14\1\45\1\6\5\45"+
+    "\1\13\2\45\1\15\7\45\4\0\1\36\1\0\1\7\1\45\1\53"+
+    "\1\12\1\2\1\47\1\3\1\51\1\4\2\45\1\26\1\21\1\5"+
+    "\1\22\1\24\1\45\1\25\1\17\1\20\1\23\1\10\1\50\1\45"+
+    "\1\16\1\45\1\31\1\0\1\32\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uff92\0";
 
   /** 
    * Translates characters to character classes
@@ -62,15 +62,16 @@ class miSegundoLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\5\0\2\1\5\2\1\3\1\4\1\5\1\6\2\1"+
-    "\1\7\1\1\1\10\1\11\2\1\1\12\2\1\1\13"+
-    "\1\1\1\14\1\1\1\15\1\16\1\17\7\0\1\7"+
-    "\4\0\1\13\1\2\3\0\1\20\7\0\1\21\4\0"+
-    "\1\22\4\0\1\23\1\0\1\24\2\0\1\25\1\26"+
-    "\1\0\1\27\1\30";
+    "\5\0\2\1\6\2\1\3\1\4\1\5\1\6\1\7"+
+    "\1\10\1\11\1\12\2\13\1\14\1\1\1\15\1\16"+
+    "\2\2\2\1\1\17\3\13\1\1\1\20\1\1\1\21"+
+    "\1\22\1\23\1\0\1\24\6\0\1\14\6\0\1\13"+
+    "\1\2\3\0\1\25\1\0\1\26\10\0\1\27\4\0"+
+    "\1\30\1\31\4\0\1\32\1\0\1\33\2\0\1\34"+
+    "\1\35\1\0\1\36\1\37";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[79];
+    int [] result = new int[93];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -95,19 +96,21 @@ class miSegundoLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\47\0\116\0\165\0\234\0\303\0\352\0\303"+
-    "\0\u0111\0\u0138\0\u015f\0\u0186\0\303\0\303\0\303\0\u01ad"+
-    "\0\u01d4\0\u01fb\0\u0222\0\u0249\0\303\0\303\0\u0270\0\u0297"+
-    "\0\303\0\u02be\0\u02e5\0\u030c\0\u0333\0\303\0\u035a\0\303"+
-    "\0\303\0\303\0\u0381\0\u03a8\0\u03cf\0\u03f6\0\u041d\0\u01fb"+
-    "\0\u0249\0\303\0\u0444\0\u046b\0\u02e5\0\u0333\0\303\0\u0492"+
-    "\0\u04b9\0\u04e0\0\u0507\0\303\0\u052e\0\u0555\0\u057c\0\u05a3"+
-    "\0\u05ca\0\u05f1\0\u0618\0\303\0\u063f\0\u0666\0\u068d\0\u06b4"+
-    "\0\u06db\0\u0702\0\u0729\0\u0750\0\u0777\0\303\0\u079e\0\303"+
-    "\0\u07c5\0\u07ec\0\303\0\303\0\u0813\0\303\0\303";
+    "\0\0\0\54\0\130\0\204\0\260\0\334\0\u0108\0\334"+
+    "\0\u0134\0\u0160\0\u018c\0\u01b8\0\u01e4\0\334\0\334\0\334"+
+    "\0\334\0\334\0\334\0\334\0\u0210\0\u023c\0\u0268\0\u0294"+
+    "\0\u02c0\0\334\0\334\0\u02ec\0\u0318\0\u0344\0\u0370\0\334"+
+    "\0\u039c\0\u03c8\0\u03f4\0\u0420\0\334\0\u044c\0\334\0\334"+
+    "\0\334\0\u0478\0\334\0\u04a4\0\u04d0\0\u04fc\0\u0528\0\u0268"+
+    "\0\u02c0\0\334\0\u0554\0\u0580\0\u05ac\0\u05d8\0\u03c8\0\u0420"+
+    "\0\334\0\u0604\0\u0630\0\u065c\0\u0688\0\334\0\u06b4\0\334"+
+    "\0\u06e0\0\u070c\0\u0738\0\u0764\0\u0790\0\u07bc\0\u07e8\0\u0814"+
+    "\0\334\0\u0840\0\u086c\0\u0898\0\u08c4\0\u08f0\0\334\0\u091c"+
+    "\0\u0948\0\u0974\0\u09a0\0\334\0\u09cc\0\334\0\u09f8\0\u0a24"+
+    "\0\334\0\334\0\u0a50\0\334\0\334";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[79];
+    int [] result = new int[93];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -130,31 +133,36 @@ class miSegundoLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\6\1\7\46\6\10\10\1\11\3\10\1\12\4\10"+
-    "\1\13\1\10\1\14\2\10\1\15\1\16\1\17\1\6"+
-    "\1\20\1\21\1\22\1\23\1\24\1\25\2\10\1\26"+
-    "\1\6\2\10\2\6\1\27\6\6\1\30\17\6\1\31"+
-    "\2\6\1\32\1\33\1\34\1\35\3\6\1\36\1\37"+
-    "\3\6\26\40\2\6\1\41\2\40\6\6\1\40\2\6"+
-    "\2\40\1\6\26\40\2\6\1\42\2\40\6\6\1\40"+
-    "\2\6\2\40\51\0\1\43\51\0\1\44\57\0\1\45"+
-    "\53\0\1\46\50\0\1\47\54\0\1\20\50\0\1\50"+
-    "\1\23\1\51\45\0\1\23\1\51\45\0\1\52\1\51"+
-    "\45\0\1\52\55\0\1\53\6\0\1\54\76\0\1\55"+
-    "\1\34\1\56\45\0\1\34\1\56\45\0\1\57\1\56"+
-    "\45\0\1\57\11\0\26\60\13\0\1\60\2\0\2\60"+
-    "\3\0\1\61\55\0\1\62\53\0\1\63\47\0\1\64"+
-    "\32\0\1\65\110\0\1\66\12\0\1\67\35\0\26\60"+
-    "\4\0\1\60\6\0\1\60\2\0\2\60\4\0\1\70"+
-    "\50\0\1\71\60\0\1\72\33\0\1\73\63\0\1\74"+
-    "\37\0\1\75\40\0\1\76\50\0\1\77\41\0\1\100"+
-    "\64\0\1\101\42\0\1\102\40\0\1\103\4\0\1\104"+
-    "\43\0\1\105\57\0\1\106\53\0\1\107\33\0\1\110"+
-    "\42\0\1\111\53\0\1\112\41\0\1\113\44\0\1\114"+
-    "\51\0\1\115\51\0\1\116\42\0\1\117\37\0";
+    "\1\6\1\7\53\6\3\10\1\11\4\10\1\12\3\10"+
+    "\1\13\4\10\1\14\1\10\1\15\2\10\1\16\1\17"+
+    "\1\20\1\21\1\22\1\23\1\24\1\6\1\25\1\26"+
+    "\1\27\1\30\1\31\1\32\1\10\1\33\1\34\1\35"+
+    "\1\10\1\6\1\10\2\6\1\36\6\6\1\37\23\6"+
+    "\1\40\2\6\1\41\1\42\1\43\1\44\2\6\1\45"+
+    "\3\6\1\46\2\6\26\47\5\6\1\47\1\50\2\47"+
+    "\5\6\1\47\1\6\3\47\1\6\1\47\1\6\26\47"+
+    "\5\6\1\47\1\51\2\47\5\6\1\47\1\6\3\47"+
+    "\1\6\1\47\56\0\1\52\120\0\1\53\11\0\1\54"+
+    "\64\0\1\55\60\0\1\56\55\0\1\57\65\0\1\25"+
+    "\55\0\1\60\1\30\1\61\52\0\1\30\1\61\52\0"+
+    "\1\62\1\61\52\0\1\62\33\0\1\63\102\0\1\64"+
+    "\55\0\1\65\5\0\1\66\107\0\1\67\1\43\1\70"+
+    "\52\0\1\43\1\70\52\0\1\71\1\70\52\0\1\71"+
+    "\12\0\26\72\16\0\1\72\1\0\3\72\1\0\1\72"+
+    "\3\0\1\73\62\0\1\74\60\0\1\75\54\0\1\76"+
+    "\37\0\1\77\74\0\1\100\32\0\1\101\120\0\1\102"+
+    "\14\0\1\103\42\0\26\72\10\0\1\72\5\0\1\72"+
+    "\1\0\3\72\1\0\1\72\4\0\1\104\55\0\1\105"+
+    "\65\0\1\106\40\0\1\107\74\0\1\110\47\0\1\111"+
+    "\44\0\1\112\45\0\1\113\55\0\1\114\46\0\1\115"+
+    "\71\0\1\116\35\0\1\117\65\0\1\120\45\0\1\121"+
+    "\4\0\1\122\50\0\1\123\64\0\1\124\60\0\1\125"+
+    "\40\0\1\126\47\0\1\127\60\0\1\130\46\0\1\131"+
+    "\51\0\1\132\56\0\1\133\56\0\1\134\47\0\1\135"+
+    "\44\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[2106];
+    int [] result = new int[2684];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -192,14 +200,14 @@ class miSegundoLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\5\0\1\11\1\1\1\11\4\1\3\11\5\1\2\11"+
-    "\2\1\1\11\4\1\1\11\1\1\3\11\7\0\1\11"+
-    "\4\0\1\11\1\1\3\0\1\11\7\0\1\11\4\0"+
-    "\1\1\4\0\1\11\1\0\1\11\2\0\2\11\1\0"+
-    "\2\11";
+    "\5\0\1\11\1\1\1\11\5\1\7\11\5\1\2\11"+
+    "\4\1\1\11\4\1\1\11\1\1\3\11\1\0\1\11"+
+    "\6\0\1\11\6\0\1\11\1\1\3\0\1\11\1\0"+
+    "\1\11\10\0\1\11\4\0\1\1\1\11\4\0\1\11"+
+    "\1\0\1\11\2\0\2\11\1\0\2\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[79];
+    int [] result = new int[93];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -295,7 +303,7 @@ class miSegundoLexer {
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 156) {
+    while (i < 164) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -649,130 +657,165 @@ class miSegundoLexer {
             { System.out.print(yytext());
             } 
             // fall through
-          case 25: break;
+          case 32: break;
           case 2: 
             { System.out.println("JAVA_ID("+yytext()+")");
             } 
             // fall through
-          case 26: break;
+          case 33: break;
           case 3: 
             { System.out.println("JAVA_PUNTO");
             } 
             // fall through
-          case 27: break;
+          case 34: break;
           case 4: 
             { System.out.println("JAVA_ABREPAR");
             } 
             // fall through
-          case 28: break;
+          case 35: break;
           case 5: 
+            { System.out.println("JAVA_INI_FUNCION");
+            } 
+            // fall through
+          case 36: break;
+          case 6: 
+            { System.out.println("JAVA_FIN_FUNCION");
+            } 
+            // fall through
+          case 37: break;
+          case 7: 
+            { System.out.println("JAVA_OPER_SUMA");
+            } 
+            // fall through
+          case 38: break;
+          case 8: 
+            { System.out.println("JAVA_OPER_RESTA");
+            } 
+            // fall through
+          case 39: break;
+          case 9: 
             { yybegin(CADENA);
 			System.out.println("JAVA_CAD_INI");
             } 
             // fall through
-          case 29: break;
-          case 6: 
+          case 40: break;
+          case 10: 
             { System.out.println("JAVA_NUM");
             } 
             // fall through
-          case 30: break;
-          case 7: 
-            { System.out.println("JAVA_COMPARADOR");
-            } 
-            // fall through
-          case 31: break;
-          case 8: 
-            { System.out.println("JAVA_CIERRAPAR");
-            } 
-            // fall through
-          case 32: break;
-          case 9: 
-            { System.out.println("JAVA_FIN_INS");
-            } 
-            // fall through
-          case 33: break;
-          case 10: 
-            { yybegin(CADENAS);
-			System.out.println("PHP_CAD_INI");
-            } 
-            // fall through
-          case 34: break;
+          case 41: break;
           case 11: 
             { System.out.println("PHP_COMPARADOR");
             } 
             // fall through
-          case 35: break;
+          case 42: break;
           case 12: 
+            { System.out.println("JAVA_COMPARADOR");
+            } 
+            // fall through
+          case 43: break;
+          case 13: 
+            { System.out.println("JAVA_CIERRAPAR");
+            } 
+            // fall through
+          case 44: break;
+          case 14: 
+            { System.out.println("JAVA_FIN_INS");
+            } 
+            // fall through
+          case 45: break;
+          case 15: 
+            { yybegin(CADENAS);
+			System.out.println("PHP_CAD_INI");
+            } 
+            // fall through
+          case 46: break;
+          case 16: 
             { System.out.println("PHP_FIN_INS");
             } 
             // fall through
-          case 36: break;
-          case 13: 
+          case 47: break;
+          case 17: 
             { System.out.print("");
             } 
             // fall through
-          case 37: break;
-          case 14: 
+          case 48: break;
+          case 18: 
             { yybegin(JAVA);
 				System.out.println("JAVA_CAD_FIN");
             } 
             // fall through
-          case 38: break;
-          case 15: 
+          case 49: break;
+          case 19: 
             { yybegin(PHP);
 				System.out.println("PHP_CAD_FIN");
             } 
             // fall through
-          case 39: break;
-          case 16: 
+          case 50: break;
+          case 20: 
+            { System.out.println("JAVA_INI_IF");
+            } 
+            // fall through
+          case 51: break;
+          case 21: 
             { System.out.println("JAVA_ID(out)");
             } 
             // fall through
-          case 40: break;
-          case 17: 
+          case 52: break;
+          case 22: 
+            { System.out.println("JAVA_INI_FOR");
+            } 
+            // fall through
+          case 53: break;
+          case 23: 
             { System.out.println("PHP_ID(echo)");
             } 
             // fall through
-          case 41: break;
-          case 18: 
+          case 54: break;
+          case 24: 
             { System.out.println("JAVA_ID(print)");
             } 
             // fall through
-          case 42: break;
-          case 19: 
+          case 55: break;
+          case 25: 
+            { System.out.println("JAVA_INI_WHILE");
+            } 
+            // fall through
+          case 56: break;
+          case 26: 
             { System.out.println("JAVA_ID(System)");
             } 
             // fall through
-          case 43: break;
-          case 20: 
+          case 57: break;
+          case 27: 
             { yybegin(YYINITIAL);
 				System.out.print("PHP_FIN");
             } 
             // fall through
-          case 44: break;
-          case 21: 
+          case 58: break;
+          case 28: 
             { yybegin(YYINITIAL);
 				System.out.print("JAVA_FIN");
             } 
             // fall through
-          case 45: break;
-          case 22: 
+          case 59: break;
+          case 29: 
             { System.out.println("JAVA_ID(println)");
             } 
             // fall through
-          case 46: break;
-          case 23: 
+          case 60: break;
+          case 30: 
             { yybegin(PHP);
 				System.out.print("PHP_INI");
             } 
             // fall through
-          case 47: break;
-          case 24: 
+          case 61: break;
+          case 31: 
             { yybegin(JAVA);
 					System.out.print("JAVA_INI");
             } 
             // fall through
-          case 48: break;
+          case 62: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

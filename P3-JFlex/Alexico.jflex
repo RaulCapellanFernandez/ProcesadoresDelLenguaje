@@ -48,6 +48,10 @@ Println = [p][r][i][n][t][l][n]
 <JAVA>  {Print} {System.out.println("JAVA_ID(print)");}
 <JAVA>  {Println} {System.out.println("JAVA_ID(println)");}
 <JAVA>  [(] {System.out.println("JAVA_ABREPAR");}
+<JAVA>  [{] {System.out.println("JAVA_INI_FUNCION");}
+<JAVA>  [}] {System.out.println("JAVA_FIN_FUNCION");}
+<JAVA>  [+] {System.out.println("JAVA_OPER_SUMA");}
+<JAVA>  [-] {System.out.println("JAVA_OPER_RESTA");}
 
 	//***********PARA CADENAS EN JAVA*******************
 <JAVA>	[\"] {yybegin(CADENA);
@@ -57,11 +61,17 @@ Println = [p][r][i][n][t][l][n]
 				System.out.println("JAVA_CAD_FIN");}
 <JAVA>  [0-9]+ {System.out.println("JAVA_NUM");}
 <JAVA>  [<]?[>]?[=]?[!]?[=] {System.out.println("JAVA_COMPARADOR");}
+<JAVA>  [<] {System.out.println("JAVA_COMPARADOR");}
+<JAVA>  [>] {System.out.println("JAVA_COMPARADOR");}
 <JAVA>  [=] {System.out.println("JAVA_ASIGN");}
 						
 <JAVA>  [)] {System.out.println("JAVA_CIERRAPAR");}
 <JAVA>	[(a-zA-Z)+] {System.out.println("JAVA_ID("+yytext()+")");}
 <JAVA>  [;] {System.out.println("JAVA_FIN_INS");}
+<JAVA>  [f][o][r] {System.out.println("JAVA_INI_FOR");}
+<JAVA>  [w][h][i][l][e] {System.out.println("JAVA_INI_WHILE");}
+<JAVA>  [i][f] {System.out.println("JAVA_INI_IF");}
+<JAVA>  [e][l][s][e] {System.out.println("JAVA_INI_ELSE");}
 
 <JAVA>	{EJava} {yybegin(YYINITIAL);
 				System.out.print("JAVA_FIN");}	
@@ -77,6 +87,8 @@ Println = [p][r][i][n][t][l][n]
 <CADENAS> [\"] {yybegin(PHP);
 				System.out.println("PHP_CAD_FIN");}
 <PHP>  [<]?[>]?[=]?[!]?[=] {System.out.println("PHP_COMPARADOR");}
+<PHP>  [<] {System.out.println("PHP_COMPARADOR");}
+<PHP>  [>] {System.out.println("PHP_COMPARADOR");}
 <PHP>  [=] {System.out.println("PHP_ASIGN");}
 <PHP>  [;] {System.out.println("PHP_FIN_INS");}
 	

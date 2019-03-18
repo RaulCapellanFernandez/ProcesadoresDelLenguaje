@@ -1,4 +1,5 @@
-BeginPHP
-$c="Esta es otra cadena";
-echo $c;
-EndPHP
+BeginJava
+for(i =0; i < a; i++){
+	a = x;
+}
+EndJava

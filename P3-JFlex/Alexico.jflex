@@ -42,6 +42,10 @@ Println = [p][r][i][n][t][l][n]
 				System.out.print("PHP_INI");}
 				
 	//***********CODIGO JAVA*******************
+<JAVA>  " " {System.out.print("");}
+<JAVA>  "	" {System.out.print("");}
+
+<JAVA>  [e][l][s][e] {System.out.println("JAVA_INI_ELSE");}
 <JAVA>  {System} {System.out.println("JAVA_ID(System)");}
 <JAVA>  [.] {System.out.println("JAVA_PUNTO");}
 <JAVA>  {Out} {System.out.println("JAVA_ID(out)");}
@@ -68,15 +72,23 @@ Println = [p][r][i][n][t][l][n]
 <JAVA>  [)] {System.out.println("JAVA_CIERRAPAR");}
 <JAVA>	[(a-zA-Z)+] {System.out.println("JAVA_ID("+yytext()+")");}
 <JAVA>  [;] {System.out.println("JAVA_FIN_INS");}
-<JAVA>  [f][o][r] {System.out.println("JAVA_INI_FOR");}
-<JAVA>  [w][h][i][l][e] {System.out.println("JAVA_INI_WHILE");}
 <JAVA>  [i][f] {System.out.println("JAVA_INI_IF");}
-<JAVA>  [e][l][s][e] {System.out.println("JAVA_INI_ELSE");}
+
+<JAVA>  [ñ] {System.out.println("JAVA_ERR");}
+<JAVA>  [ç] {System.out.println("JAVA_ERR");}
+<JAVA>  [Ñ] {System.out.println("JAVA_ERR");}
+<JAVA>  [Ç] {System.out.println("JAVA_ERR");}
+<JAVA>  [$] {System.out.println("JAVA_ERR");}
+<JAVA>  [0-9]+ {System.out.println("JAVA_ERR");}
 
 <JAVA>	{EJava} {yybegin(YYINITIAL);
 				System.out.print("JAVA_FIN");}	
 				
 	//***********CODIGO PHP*******************
+<PHP>  " " {System.out.print("");}
+<PHP>  "	" {System.out.print("");}
+<PHP>  [e][l][s][e] {System.out.println("PHP_INI_ELSE");}
+<PHP>  [e][l][s][e][i][f] {System.out.println("PHP_INI_ELSEIF");}
 <PHP>	[\$][a-zA-Z]+([a-zA-Z0-9]+)? {System.out.println("JAVA_ID("+yytext()+")");}
 
 <PHP>	[e][c][h][o] {System.out.println("PHP_ID(echo)");}
@@ -91,7 +103,19 @@ Println = [p][r][i][n][t][l][n]
 <PHP>  [>] {System.out.println("PHP_COMPARADOR");}
 <PHP>  [=] {System.out.println("PHP_ASIGN");}
 <PHP>  [;] {System.out.println("PHP_FIN_INS");}
-	
+<PHP>  [(] {System.out.println("PHP_ABREPAR");}
+<PHP>  [)] {System.out.println("PHP_CIERRAPAR");}
+<PHP>  [{] {System.out.println("PHP_INI_FUNCION");}
+<PHP>  [}] {System.out.println("PHP_FIN_FUNCION");}
+<PHP>  [i][f] {System.out.println("PHP_INI_IF");}
+
+<PHP>  [ñ] {System.out.println("PHP_ERR");}
+<PHP>  [ç] {System.out.println("PHP_ERR");}
+<PHP>  [Ñ] {System.out.println("PHP_ERR");}
+<PHP>  [Ç] {System.out.println("PHP_ERR");}
+<PHP>  [0-9]+ {System.out.println("PHP_ERR");}
+
+
 <PHP>	{EPHP} {yybegin(YYINITIAL);
 				System.out.print("PHP_FIN");}	
 

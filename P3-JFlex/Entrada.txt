@@ -1,5 +1,10 @@
-BeginJava
-for(i =0; i < a; i++){
-	a = x;
-}
-EndJava
+BeginPHP
+
+   if ($a > $b) {
+	echo "a es mayor que b";
+   } elseif ($a == $b) {
+       echo "a es igual que b";
+   } else {
+       echo "a es menor que b";
+}0 ñ Ç
+EndPHP

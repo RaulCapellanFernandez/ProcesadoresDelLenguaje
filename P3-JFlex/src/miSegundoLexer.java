@@ -67,10 +67,10 @@ class miSegundoLexer {
     "\1\10\1\11\1\12\1\13\3\14\1\1\1\15\1\16"+
     "\1\17\3\1\1\20\1\21\1\22\1\23\1\24\3\25"+
     "\1\1\1\26\1\27\1\24\1\1\1\30\1\31\2\0"+
-    "\1\32\6\0\1\14\2\0\1\33\3\0\1\25\1\2"+
-    "\4\0\1\34\5\0\1\35\3\0\1\36\1\37\4\0"+
-    "\1\40\5\0\1\41\1\0\1\42\1\43\2\0\1\44"+
-    "\1\45\1\0\1\46\1\47";
+    "\1\32\6\0\1\14\2\0\1\33\3\0\1\25\1\34"+
+    "\4\0\1\35\5\0\1\36\3\0\1\37\1\40\4\0"+
+    "\1\41\5\0\1\42\1\0\1\43\1\44\2\0\1\45"+
+    "\1\46\1\0\1\47\1\50";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[103];
@@ -662,205 +662,210 @@ class miSegundoLexer {
             { System.out.print(yytext());
             } 
             // fall through
-          case 40: break;
+          case 41: break;
           case 2: 
             { System.out.println("JAVA_ID("+yytext()+")");
             } 
             // fall through
-          case 41: break;
+          case 42: break;
           case 3: 
             { System.out.print("");
             } 
             // fall through
-          case 42: break;
+          case 43: break;
           case 4: 
             { System.out.println("JAVA_PUNTO");
             } 
             // fall through
-          case 43: break;
+          case 44: break;
           case 5: 
             { System.out.println("JAVA_ABREPAR");
             } 
             // fall through
-          case 44: break;
+          case 45: break;
           case 6: 
             { System.out.println("JAVA_INI_FUNCION");
             } 
             // fall through
-          case 45: break;
+          case 46: break;
           case 7: 
             { System.out.println("JAVA_FIN_FUNCION");
             } 
             // fall through
-          case 46: break;
+          case 47: break;
           case 8: 
             { System.out.println("JAVA_OPER_SUMA");
             } 
             // fall through
-          case 47: break;
+          case 48: break;
           case 9: 
             { System.out.println("JAVA_OPER_RESTA");
             } 
             // fall through
-          case 48: break;
+          case 49: break;
           case 10: 
             { yybegin(CADENA);
 			System.out.println("JAVA_CAD_INI");
             } 
             // fall through
-          case 49: break;
+          case 50: break;
           case 11: 
             { System.out.println("JAVA_NUM");
             } 
             // fall through
-          case 50: break;
+          case 51: break;
           case 12: 
             { System.out.println("JAVA_COMPARADOR");
             } 
             // fall through
-          case 51: break;
+          case 52: break;
           case 13: 
             { System.out.println("JAVA_CIERRAPAR");
             } 
             // fall through
-          case 52: break;
+          case 53: break;
           case 14: 
             { System.out.println("JAVA_FIN_INS");
             } 
             // fall through
-          case 53: break;
+          case 54: break;
           case 15: 
             { System.out.println("JAVA_ERR");
             } 
             // fall through
-          case 54: break;
+          case 55: break;
           case 16: 
             { System.out.println("PHP_ABREPAR");
             } 
             // fall through
-          case 55: break;
+          case 56: break;
           case 17: 
             { System.out.println("PHP_INI_FUNCION");
             } 
             // fall through
-          case 56: break;
+          case 57: break;
           case 18: 
             { System.out.println("PHP_FIN_FUNCION");
             } 
             // fall through
-          case 57: break;
+          case 58: break;
           case 19: 
             { yybegin(CADENAS);
 			System.out.println("PHP_CAD_INI");
             } 
             // fall through
-          case 58: break;
+          case 59: break;
           case 20: 
             { System.out.println("PHP_ERR");
             } 
             // fall through
-          case 59: break;
+          case 60: break;
           case 21: 
             { System.out.println("PHP_COMPARADOR");
             } 
             // fall through
-          case 60: break;
+          case 61: break;
           case 22: 
             { System.out.println("PHP_CIERRAPAR");
             } 
             // fall through
-          case 61: break;
+          case 62: break;
           case 23: 
             { System.out.println("PHP_FIN_INS");
             } 
             // fall through
-          case 62: break;
+          case 63: break;
           case 24: 
             { yybegin(JAVA);
 				System.out.println("JAVA_CAD_FIN");
             } 
             // fall through
-          case 63: break;
+          case 64: break;
           case 25: 
             { yybegin(PHP);
 				System.out.println("PHP_CAD_FIN");
             } 
             // fall through
-          case 64: break;
+          case 65: break;
           case 26: 
             { System.out.println("JAVA_INI_IF");
             } 
             // fall through
-          case 65: break;
+          case 66: break;
           case 27: 
             { System.out.println("PHP_INI_IF");
             } 
             // fall through
-          case 66: break;
-          case 28: 
-            { System.out.println("JAVA_ID(out)");
-            } 
-            // fall through
           case 67: break;
-          case 29: 
-            { System.out.println("JAVA_INI_ELSE");
+          case 28: 
+            { System.out.println("PHP_ID("+yytext().substring(1,yytext().length())+")");
             } 
             // fall through
           case 68: break;
-          case 30: 
-            { System.out.println("PHP_INI_ELSE");
+          case 29: 
+            { System.out.println("JAVA_ID(out)");
             } 
             // fall through
           case 69: break;
-          case 31: 
-            { System.out.println("PHP_ID(echo)");
+          case 30: 
+            { System.out.println("JAVA_INI_ELSE");
             } 
             // fall through
           case 70: break;
-          case 32: 
-            { System.out.println("JAVA_ID(print)");
+          case 31: 
+            { System.out.println("PHP_INI_ELSE");
             } 
             // fall through
           case 71: break;
-          case 33: 
-            { System.out.println("JAVA_ID(System)");
+          case 32: 
+            { System.out.println("PHP_ID(echo)");
             } 
             // fall through
           case 72: break;
-          case 34: 
-            { System.out.println("PHP_INI_ELSEIF");
+          case 33: 
+            { System.out.println("JAVA_ID(print)");
             } 
             // fall through
           case 73: break;
+          case 34: 
+            { System.out.println("JAVA_ID(System)");
+            } 
+            // fall through
+          case 74: break;
           case 35: 
+            { System.out.println("PHP_INI_ELSEIF");
+            } 
+            // fall through
+          case 75: break;
+          case 36: 
             { yybegin(YYINITIAL);
 				System.out.print("PHP_FIN");
             } 
             // fall through
-          case 74: break;
-          case 36: 
+          case 76: break;
+          case 37: 
             { yybegin(YYINITIAL);
 				System.out.print("JAVA_FIN");
             } 
             // fall through
-          case 75: break;
-          case 37: 
+          case 77: break;
+          case 38: 
             { System.out.println("JAVA_ID(println)");
             } 
             // fall through
-          case 76: break;
-          case 38: 
+          case 78: break;
+          case 39: 
             { yybegin(PHP);
 				System.out.print("PHP_INI");
             } 
             // fall through
-          case 77: break;
-          case 39: 
+          case 79: break;
+          case 40: 
             { yybegin(JAVA);
 					System.out.print("JAVA_INI");
             } 
             // fall through
-          case 78: break;
+          case 80: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

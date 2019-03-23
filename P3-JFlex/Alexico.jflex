@@ -89,7 +89,7 @@ Println = [p][r][i][n][t][l][n]
 <PHP>  "	" {System.out.print("");}
 <PHP>  [e][l][s][e] {System.out.println("PHP_INI_ELSE");}
 <PHP>  [e][l][s][e][i][f] {System.out.println("PHP_INI_ELSEIF");}
-<PHP>	[\$][a-zA-Z]+([a-zA-Z0-9]+)? {System.out.println("JAVA_ID("+yytext()+")");}
+<PHP>	[\$][a-zA-Z]+([a-zA-Z0-9]+)? {System.out.println("PHP_ID("+yytext().substring(1,yytext().length())+")");}
 
 <PHP>	[e][c][h][o] {System.out.println("PHP_ID(echo)");}
 

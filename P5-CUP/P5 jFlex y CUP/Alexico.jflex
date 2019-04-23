@@ -1,6 +1,7 @@
 import java_cup.runtime.*;
 %%
 %unicode
+%class Lexer
 %cup
 %line
 %column
